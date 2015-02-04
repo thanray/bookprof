@@ -13,7 +13,7 @@ public class HelloWorldController {
         ModelAndView mav = new ModelAndView();
         mav.setViewName("hello");
          
-        String str = "Hello World!";
+        String str = "Hello World! 3";
         mav.addObject("message", str);
  
         return mav;
