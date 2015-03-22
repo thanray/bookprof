@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module external.linked.project.path="$MODULE_DIR$" external.root.project.path="$MODULE_DIR$" external.system.id="GRADLE" external.system.module.group="" external.system.module.version="unspecified" type="JAVA_MODULE" version="4">
+<module external.linked.project.id="bookProf" external.linked.project.path="$MODULE_DIR$" external.root.project.path="$MODULE_DIR$" external.system.id="GRADLE" external.system.module.group="org.bookProf" external.system.module.version="0.1" relativePaths="true" type="JAVA_MODULE" version="4">
   <component name="FacetManager">
-    <facet type="web" name="Web Gradle : companies-0.1.war">
+    <facet type="JRebel" name="JRebel">
       <configuration>
-        <webroots />
-        <sourceRoots>
-          <root url="file://$MODULE_DIR$/src/main/resources" />
-          <root url="file://$MODULE_DIR$/src/main/java" />
-        </sourceRoots>
+        <option name="autosync" value="false" />
+        <option name="deleteUnindexed" value="true" />
+        <option name="manualXML" value="false" />
+        <option name="masterModuleName" />
+        <option name="remotingEnabled" value="false" />
+        <option name="scanAllFiles" value="false" />
+        <option name="secure" value="true" />
+        <option name="url" value="http://localhost:8080/" />
+        <option name="xmlDir" />
       </configuration>
     </facet>
   </component>
@@ -17,9 +21,10 @@
     <exclude-output />
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/resources" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/main/resources" type="java-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/test/resources" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/resources" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/test/resources" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/.gradle" />
       <excludeFolder url="file://$MODULE_DIR$/build" />
     </content>
@@ -30,6 +35,7 @@
     <orderEntry type="library" scope="PROVIDED" name="Gradle: tomcat-embed-el-7.0.54" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Gradle: ecj-P20140317-1600" level="project" />
     <orderEntry type="library" exported="" name="Gradle: spring-boot-starter-web-1.1.2.BUILD-SNAPSHOT" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: spring-boot-starter-data-mongodb-1.1.2.BUILD-SNAPSHOT" level="project" />
     <orderEntry type="library" exported="" name="Gradle: spring-boot-starter-1.1.2.BUILD-SNAPSHOT" level="project" />
     <orderEntry type="library" exported="" name="Gradle: spring-boot-starter-tomcat-1.1.2.BUILD-SNAPSHOT" level="project" />
     <orderEntry type="library" exported="" name="Gradle: jackson-databind-2.3.3" level="project" />
@@ -37,6 +43,9 @@
     <orderEntry type="library" exported="" name="Gradle: spring-core-4.0.5.RELEASE" level="project" />
     <orderEntry type="library" exported="" name="Gradle: spring-web-4.0.5.RELEASE" level="project" />
     <orderEntry type="library" exported="" name="Gradle: spring-webmvc-4.0.5.RELEASE" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: mongo-java-driver-2.12.1" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: spring-tx-4.0.5.RELEASE" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: spring-data-mongodb-1.5.0.RELEASE" level="project" />
     <orderEntry type="library" exported="" name="Gradle: spring-boot-1.1.2.BUILD-SNAPSHOT" level="project" />
     <orderEntry type="library" exported="" name="Gradle: spring-boot-autoconfigure-1.1.2.BUILD-SNAPSHOT" level="project" />
     <orderEntry type="library" exported="" name="Gradle: spring-boot-starter-logging-1.1.2.BUILD-SNAPSHOT" level="project" />
@@ -51,13 +60,728 @@
     <orderEntry type="library" exported="" name="Gradle: spring-beans-4.0.5.RELEASE" level="project" />
     <orderEntry type="library" exported="" name="Gradle: spring-context-4.0.5.RELEASE" level="project" />
     <orderEntry type="library" exported="" name="Gradle: spring-expression-4.0.5.RELEASE" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: spring-data-commons-1.8.0.RELEASE" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: slf4j-api-1.7.7" level="project" />
     <orderEntry type="library" exported="" name="Gradle: jcl-over-slf4j-1.7.7" level="project" />
     <orderEntry type="library" exported="" name="Gradle: jul-to-slf4j-1.7.7" level="project" />
     <orderEntry type="library" exported="" name="Gradle: log4j-over-slf4j-1.7.7" level="project" />
     <orderEntry type="library" exported="" name="Gradle: logback-classic-1.1.2" level="project" />
     <orderEntry type="library" exported="" name="Gradle: aopalliance-1.0" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: slf4j-api-1.7.7" level="project" />
     <orderEntry type="library" exported="" name="Gradle: logback-core-1.1.2" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: junit-4.11" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: spring-boot-starter-test-1.1.2.BUILD-SNAPSHOT" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: de.flapdoodle.embed.mongo-1.26" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: hamcrest-core-1.3" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: mockito-core-1.9.5" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: hamcrest-library-1.3" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: spring-test-4.0.5.RELEASE" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: de.flapdoodle.embed.process-1.24" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: objenesis-1.0" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: commons-io-2.2" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: commons-compress-1.3" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: guava-11.0.1" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: jsr305-1.3.9" level="project" />
+    <orderEntry type="module-library" scope="PROVIDED">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.tomcat.embed/tomcat-embed-jasper/7.0.54/54c2b4c25fb5ea0a6edf555986927b20cf9f2aa7/tomcat-embed-jasper-7.0.54.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.tomcat.embed/tomcat-embed-jasper/7.0.54/558a599d460690eb01ad3454fbc2ed71b52a4d53/tomcat-embed-jasper-7.0.54-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="PROVIDED">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.tomcat.embed/tomcat-embed-core/7.0.54/874cb56db3ccd8101d9373f433d86f1badb5dada/tomcat-embed-core-7.0.54.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.tomcat.embed/tomcat-embed-core/7.0.54/e2ed5d7692c9321877a2c29466e24be42f39e0f9/tomcat-embed-core-7.0.54-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="PROVIDED">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.tomcat.embed/tomcat-embed-el/7.0.54/3c9425b650ba700ac47185500facabd9ab970adc/tomcat-embed-el-7.0.54.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.tomcat.embed/tomcat-embed-el/7.0.54/db9825c9b62616c7e10b5d58e005f26b4ff186e9/tomcat-embed-el-7.0.54-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="PROVIDED">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.jdt.core.compiler/ecj/P20140317-1600/5e329ddb97816f4e5599578aafe87cc07a1381cd/ecj-P20140317-1600.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.jdt.core.compiler/ecj/P20140317-1600/bfdba22678952df592f289601bc7edd6f3e10041/ecj-P20140317-1600-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-thymeleaf/1.1.2.BUILD-SNAPSHOT/f703c8cca66410899166bb252835b568d59df2f4/spring-boot-starter-thymeleaf-1.1.2.BUILD-SNAPSHOT.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-thymeleaf/1.1.2.BUILD-SNAPSHOT/eac2d88e501be4c168b7f7f50634d1ee03e3870/spring-boot-starter-thymeleaf-1.1.2.BUILD-SNAPSHOT-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-security/1.1.2.BUILD-SNAPSHOT/8dc96abeb6b8713ea024c42369f1ff3988701031/spring-boot-starter-security-1.1.2.BUILD-SNAPSHOT.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-security/1.1.2.BUILD-SNAPSHOT/a4a9e6ae8a3ecfe5f22650e9638231fd1b950d49/spring-boot-starter-security-1.1.2.BUILD-SNAPSHOT-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-web/1.1.2.BUILD-SNAPSHOT/a02957432ddedd4b9b646302ed015536c64ec8a8/spring-boot-starter-web-1.1.2.BUILD-SNAPSHOT.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-web/1.1.2.BUILD-SNAPSHOT/4255fa1173a7609024a4df8e8d7ad25533f1ae/spring-boot-starter-web-1.1.2.BUILD-SNAPSHOT-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-data-mongodb/1.1.2.BUILD-SNAPSHOT/dc28b051778d49b715b72e09138497c599494494/spring-boot-starter-data-mongodb-1.1.2.BUILD-SNAPSHOT.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-data-mongodb/1.1.2.BUILD-SNAPSHOT/4077dd106558651994dea22d7bda8a6e7426efe5/spring-boot-starter-data-mongodb-1.1.2.BUILD-SNAPSHOT-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.opencsv/opencsv/3.3/2858373af0681aafd3d79fdd533cc9127959c9ea/opencsv-3.3.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.opencsv/opencsv/3.3/b13fe468126fbfe66dbf0b468060683749451789/opencsv-3.3-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter/1.1.2.BUILD-SNAPSHOT/cd5ee315ff5014e04808ef8da8775261ff0f85bf/spring-boot-starter-1.1.2.BUILD-SNAPSHOT.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter/1.1.2.BUILD-SNAPSHOT/7e11fe7e00278c39a5784ebc3d0b7d36eb93677e/spring-boot-starter-1.1.2.BUILD-SNAPSHOT-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-core/4.0.5.RELEASE/cce94116431b5a1384d58316a4090bbe7718fd5a/spring-core-4.0.5.RELEASE.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-core/4.0.5.RELEASE/c8ccd8ae8bb85f917ef429d3cad37b1b36c92c49/spring-core-4.0.5.RELEASE-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.thymeleaf/thymeleaf-spring4/2.1.3.RELEASE/245c44aa3f2735f6f8346bbd5028a20652215dbf/thymeleaf-spring4-2.1.3.RELEASE.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.thymeleaf/thymeleaf-spring4/2.1.3.RELEASE/c7948d461327831e6783eddd6bace998548a6fd1/thymeleaf-spring4-2.1.3.RELEASE-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/nz.net.ultraq.thymeleaf/thymeleaf-layout-dialect/1.2.4/ad1e24ea3f4adcca0e86efe6c54fb6badd6e2002/thymeleaf-layout-dialect-1.2.4.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/nz.net.ultraq.thymeleaf/thymeleaf-layout-dialect/1.2.4/91a3ef232c1225465467e500ba43b0384669c95c/thymeleaf-layout-dialect-1.2.4-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-beans/4.0.5.RELEASE/11e00022f109653ee0dbe16b59c26e19bd90fa08/spring-beans-4.0.5.RELEASE.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-beans/4.0.5.RELEASE/589675b60574e292b76f8ef3bf36bec72a979e45/spring-beans-4.0.5.RELEASE-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-context/4.0.5.RELEASE/98cd9a4b8bb0c695c0cfcc204cf804f433851cfe/spring-context-4.0.5.RELEASE.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-context/4.0.5.RELEASE/aadd509610ea91906c177c33c22dd7e28df3b66/spring-context-4.0.5.RELEASE-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-expression/4.0.5.RELEASE/d7ddbc320c31c15cb3612ed64607e181c3b2d851/spring-expression-4.0.5.RELEASE.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-expression/4.0.5.RELEASE/11f705f4d73aa2f074d32602fd6a80898fd50257/spring-expression-4.0.5.RELEASE-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-web/4.0.5.RELEASE/1819f6d4ab65fb33e19c492d5c5aa21396e42b3f/spring-web-4.0.5.RELEASE.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-web/4.0.5.RELEASE/82389e66ef1cd0085d5a8a00c827ae5c93a8040b/spring-web-4.0.5.RELEASE-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.security/spring-security-config/3.2.4.RELEASE/952da051fc959b215c8e5882a7ab1ca5137af036/spring-security-config-3.2.4.RELEASE.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.security/spring-security-config/3.2.4.RELEASE/7abcbd88e75b7d813d81f1e7c70c5aa688b35e02/spring-security-config-3.2.4.RELEASE-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.security/spring-security-web/3.2.4.RELEASE/197d803ab63dd3523d9df186505fc1cc93044334/spring-security-web-3.2.4.RELEASE.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.security/spring-security-web/3.2.4.RELEASE/d4d242890361847b7167fa6ff16b638e0053a524/spring-security-web-3.2.4.RELEASE-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-aop/4.0.5.RELEASE/d22abbbba78f7c8854fc39346cc99362272c5c90/spring-aop-4.0.5.RELEASE.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-aop/4.0.5.RELEASE/2d8ec0d3a074b4a193c16312ab2cda105d87871f/spring-aop-4.0.5.RELEASE-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-tomcat/1.1.2.BUILD-SNAPSHOT/104d03f1f41fbf5fe192c905bf633839a0dcf309/spring-boot-starter-tomcat-1.1.2.BUILD-SNAPSHOT.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-tomcat/1.1.2.BUILD-SNAPSHOT/8e1dd44a5244d2b72051301f1f9b2a9585350a0b/spring-boot-starter-tomcat-1.1.2.BUILD-SNAPSHOT-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-databind/2.3.3/63b77400b5f1cf83a81823562c48d3120ef5518e/jackson-databind-2.3.3.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-databind/2.3.3/24d14caf77d96de6e2265c75137fad96b1990331/jackson-databind-2.3.3-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.hibernate/hibernate-validator/5.0.3.Final/e0fa071d3ced426a05fc1a59d788cb72a1659c3c/hibernate-validator-5.0.3.Final.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.hibernate/hibernate-validator/5.0.3.Final/268b9393804e278e15600fbd169b22726af8b4a2/hibernate-validator-5.0.3.Final-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-webmvc/4.0.5.RELEASE/2459455b0f2e19e7a51fc7bff4de341947d9bc57/spring-webmvc-4.0.5.RELEASE.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-webmvc/4.0.5.RELEASE/a71e281249899ad9f4e856d142d9728d17844b63/spring-webmvc-4.0.5.RELEASE-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.mongodb/mongo-java-driver/2.12.1/aefb5972e951b230756e8e02178cc3d6eb430675/mongo-java-driver-2.12.1.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.mongodb/mongo-java-driver/2.12.1/f382554d368dee0ba8ccc71f7c71b1253db0bd08/mongo-java-driver-2.12.1-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-tx/4.0.5.RELEASE/bc94807ffcf9a6934428eb7ecdf9c37c41dd95a1/spring-tx-4.0.5.RELEASE.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-tx/4.0.5.RELEASE/a1334d0da26cd44f3930c8930be786cb13e8e9ec/spring-tx-4.0.5.RELEASE-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.data/spring-data-mongodb/1.5.0.RELEASE/a6b30c7bdd1b20dcef8033ad72b3f8f57f7704d4/spring-data-mongodb-1.5.0.RELEASE.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.data/spring-data-mongodb/1.5.0.RELEASE/7995c74ce10ad46389613f4735f35d9b5058088e/spring-data-mongodb-1.5.0.RELEASE-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-lang3/3.3.2/90a3822c38ec8c996e84c16a3477ef632cbc87a3/commons-lang3-3.3.2.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-lang3/3.3.2/d2a489573c0ed2c4942b3660decad5d65087b406/commons-lang3-3.3.2-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot/1.1.2.BUILD-SNAPSHOT/1f67f5337925b8ddd62fc7f166409e25f0d8673/spring-boot-1.1.2.BUILD-SNAPSHOT.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot/1.1.2.BUILD-SNAPSHOT/5afc79c47213b65d3ad482b4dd81db6d08cf563f/spring-boot-1.1.2.BUILD-SNAPSHOT-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-autoconfigure/1.1.2.BUILD-SNAPSHOT/31c6d5bd87f35e0c08fdaed4caa8947007d9fa02/spring-boot-autoconfigure-1.1.2.BUILD-SNAPSHOT.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-autoconfigure/1.1.2.BUILD-SNAPSHOT/7beef2bca8a89eeb99db5bb8c44d19702bc91723/spring-boot-autoconfigure-1.1.2.BUILD-SNAPSHOT-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-logging/1.1.2.BUILD-SNAPSHOT/17f2495e9b134ed4893708a3b52697dba67cedcb/spring-boot-starter-logging-1.1.2.BUILD-SNAPSHOT.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-logging/1.1.2.BUILD-SNAPSHOT/ffa7bbe00b34abd8fa677e8cad67deb1c84b3cd0/spring-boot-starter-logging-1.1.2.BUILD-SNAPSHOT-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.yaml/snakeyaml/1.13/73cbb494a912866c4c831a178c3a2a9169f4eaad/snakeyaml-1.13.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.yaml/snakeyaml/1.13/b55f31fd670877e459052312a2cc26b0694307b0/snakeyaml-1.13-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.thymeleaf/thymeleaf/2.1.3.RELEASE/2712ec998d7b4065e041146d01d4202da20009b7/thymeleaf-2.1.3.RELEASE.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.thymeleaf/thymeleaf/2.1.3.RELEASE/1f9a319b06192a6ecaa75a646855c9f486d39e83/thymeleaf-2.1.3.RELEASE-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/aopalliance/aopalliance/1.0/235ba8b489512805ac13a8f9ea77a1ca5ebe3e8/aopalliance-1.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/aopalliance/aopalliance/1.0/4a4b6d692e17846a9f3da036438a7ac491d3c814/aopalliance-1.0-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.security/spring-security-core/3.2.4.RELEASE/493bc57396a821e8ffa7d99fac77cc79c15e9b7f/spring-security-core-3.2.4.RELEASE.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.security/spring-security-core/3.2.4.RELEASE/c63f2deae158ec91d0dc4e6a932ca8d675bd7c43/spring-security-core-3.2.4.RELEASE-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.tomcat.embed/tomcat-embed-logging-juli/7.0.54/68a1a1fc9fa2c7f97431a36e89f95c5d2eb2ebd5/tomcat-embed-logging-juli-7.0.54.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.tomcat.embed/tomcat-embed-logging-juli/7.0.54/8dca8cfe4ebeb68b28a2225140291c02c4d2cc51/tomcat-embed-logging-juli-7.0.54-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-annotations/2.3.0/f5e853a20b60758922453d56f9ae1e64af5cb3da/jackson-annotations-2.3.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-annotations/2.3.0/cc964b08f8d37e3d8465de923b9e6321107a5429/jackson-annotations-2.3.0-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-core/2.3.3/7d8c5d79cc99995e21e6f955857312d8409f02a1/jackson-core-2.3.3.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-core/2.3.3/7d582e8c2d3f7015f5c22b218d6a232a86f157ef/jackson-core-2.3.3-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/javax.validation/validation-api/1.1.0.Final/8613ae82954779d518631e05daa73a6a954817d5/validation-api-1.1.0.Final.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/javax.validation/validation-api/1.1.0.Final/7d49b53caed9bd81d172807c3e096d24f3c57090/validation-api-1.1.0.Final-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jboss.logging/jboss-logging/3.1.1.GA/7fb1a7eb7ff1d15cac1802510fee65c7ca31a869/jboss-logging-3.1.1.GA.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jboss.logging/jboss-logging/3.1.1.GA/e8fb8edacbcab714c4b8add89f5dd4ee9b4b7862/jboss-logging-3.1.1.GA-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.fasterxml/classmate/1.0.0/434efef28c81162b17c540e634cffa3bd9b09b4c/classmate-1.0.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.fasterxml/classmate/1.0.0/da0cec0cf5fa28fba22e44700d72259e0225f2e4/classmate-1.0.0-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.data/spring-data-commons/1.8.0.RELEASE/6db4c9700bc71677068c227422b0538be2271490/spring-data-commons-1.8.0.RELEASE.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.data/spring-data-commons/1.8.0.RELEASE/1856199ba0cfa970e0ea1e12e6c6ab5917c74219/spring-data-commons-1.8.0.RELEASE-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.slf4j/jcl-over-slf4j/1.7.7/56003dcd0a31deea6391b9e2ef2f2dc90b205a92/jcl-over-slf4j-1.7.7.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.slf4j/jcl-over-slf4j/1.7.7/b5a646b81b899e930f8600c5f45766dd82743d93/jcl-over-slf4j-1.7.7-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.slf4j/jul-to-slf4j/1.7.7/def21bc1a6e648ee40b41a84f1db443132913105/jul-to-slf4j-1.7.7.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.slf4j/jul-to-slf4j/1.7.7/13cbf9161382f50c1862bc371bf5c8aab05a664c/jul-to-slf4j-1.7.7-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.slf4j/log4j-over-slf4j/1.7.7/d521cb26a9c4407caafcec302e7804b048b07cea/log4j-over-slf4j-1.7.7.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.slf4j/log4j-over-slf4j/1.7.7/307e030bc37259ad60dce614530d698ac74c4dc/log4j-over-slf4j-1.7.7-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/ch.qos.logback/logback-classic/1.1.2/b316e9737eea25e9ddd6d88eaeee76878045c6b2/logback-classic-1.1.2.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/ch.qos.logback/logback-classic/1.1.2/decd76e2c461157804473468bbdc6b8eb6d6121b/logback-classic-1.1.2-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/ch.qos.logback/logback-core/1.1.2/2d23694879c2c12f125dac5076bdfd5d771cc4cb/logback-core-1.1.2.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/ch.qos.logback/logback-core/1.1.2/502e1c764542fe747896c1dc04f023acfe0e5cbc/logback-core-1.1.2-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/ognl/ognl/3.0.6/a3665cf8e3426686ee751790f3d1e1ec5705e9dc/ognl-3.0.6.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/ognl/ognl/3.0.6/8ef4c8207d5a87c99bd7a080aa04ef954aa00b44/ognl-3.0.6-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.javassist/javassist/3.16.1-GA/315891b371395271977af518d4db5cee1a0bc9bf/javassist-3.16.1-GA.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.javassist/javassist/3.16.1-GA/8f95b972246d57bca63f7a715af2aa9f61bf7f34/javassist-3.16.1-GA-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.unbescape/unbescape/1.0/4d6208849cec8ae8c16467c285df1e6272bff2ce/unbescape-1.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.unbescape/unbescape/1.0/904ea44b940cce5b011867a678b25422f3c57f18/unbescape-1.0-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/1.7.7/2b8019b6249bb05d81d3a3094e468753e2b21311/slf4j-api-1.7.7.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/1.7.7/acd62e31cc314266e73eebed0b6dd7ea974a0ed/slf4j-api-1.7.7-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/junit/junit/4.11/4e031bb61df09069aeb2bffb4019e7a5034a4ee0/junit-4.11.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/junit/junit/4.11/28e0ad201304e4a4abf999ca0570b7cffc352c3c/junit-4.11-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-test/1.1.2.BUILD-SNAPSHOT/47739626c807a55c34e7ca229dd5e564b3d0f4b3/spring-boot-starter-test-1.1.2.BUILD-SNAPSHOT.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-test/1.1.2.BUILD-SNAPSHOT/820f7c651e6414bdd70c95a14c68924d380a28a8/spring-boot-starter-test-1.1.2.BUILD-SNAPSHOT-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/de.flapdoodle.embed/de.flapdoodle.embed.mongo/1.26/3a5077e9039264aac1fc9f5abf077b103880817a/de.flapdoodle.embed.mongo-1.26.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/de.flapdoodle.embed/de.flapdoodle.embed.mongo/1.26/ef0eb87c5aa0478fbc5c8f032fdcc0908205875/de.flapdoodle.embed.mongo-1.26-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.hamcrest/hamcrest-core/1.3/42a25dc3219429f0e5d060061f71acb49bf010a0/hamcrest-core-1.3.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.hamcrest/hamcrest-core/1.3/1dc37250fbc78e23a65a67fbbaf71d2e9cbc3c0b/hamcrest-core-1.3-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.mockito/mockito-core/1.9.5/c3264abeea62c4d2f367e21484fbb40c7e256393/mockito-core-1.9.5.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.mockito/mockito-core/1.9.5/46f703fb4266140c544d48a189cb25947eb6333e/mockito-core-1.9.5-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.hamcrest/hamcrest-library/1.3/4785a3c21320980282f9f33d0d1264a69040538f/hamcrest-library-1.3.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.hamcrest/hamcrest-library/1.3/47a7ee46628ab7133129cd7cef1e92657bc275e/hamcrest-library-1.3-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-test/4.0.5.RELEASE/caa3ead3ab38ecaa979ec7054fdfc1b73d36f916/spring-test-4.0.5.RELEASE.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-test/4.0.5.RELEASE/846537e521fd4e883d0072245960e4f1f91c187a/spring-test-4.0.5.RELEASE-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/de.flapdoodle.embed/de.flapdoodle.embed.process/1.24/7890e80cee7466e5e2629b88094f7ec676eb867d/de.flapdoodle.embed.process-1.24.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/de.flapdoodle.embed/de.flapdoodle.embed.process/1.24/c50e75cc7e9b6de74884f1c7f3398c2db697b260/de.flapdoodle.embed.process-1.24-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.objenesis/objenesis/1.0/9b473564e792c2bdf1449da1f0b1b5bff9805704/objenesis-1.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.objenesis/objenesis/1.0/b10c90e57b7bb985a7b6a704769428fe5c2a732c/objenesis-1.0-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-io/commons-io/2.2/83b5b8a7ba1c08f9e8c8ff2373724e33d3c1e22a/commons-io-2.2.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-io/commons-io/2.2/8d6b98f21262995489a8418fff8da992d7e25c1e/commons-io-2.2-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-compress/1.3/613a08bc72e2e9a43c9f87b9ff8352b47e18e3ae/commons-compress-1.3.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-compress/1.3/b34c14d5871ba647a1f57e6e22fbbe93a2985010/commons-compress-1.3-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/11.0.1/57b40a943725d43610c898ac0169adf1b2d55742/guava-11.0.1.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/11.0.1/6101fb9881e05d563c8c971757edb19bfced011/guava-11.0.1-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/1.3.9/40719ea6961c0cb6afaeb6a921eaa1f6afd4cfdf/jsr305-1.3.9.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
 </module>
-
