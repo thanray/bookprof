@@ -65,7 +65,7 @@ public class BookType extends BaseModel {
     return ssn;
   }
 
-  public void setSsn(String ssn) {
+  public void setSSN(String ssn) {
     this.ssn = ssn;
   }
 

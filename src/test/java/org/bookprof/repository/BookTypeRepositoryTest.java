@@ -4,7 +4,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 
-import org.bookprof.BookProfApplication;
+import org.bookprof.config.MongoDbConfig;
 import org.bookprof.builder.BookTypeBuilder;
 import org.bookprof.config.WebMvcConfig;
 import org.bookprof.model.book.BookType;
@@ -23,7 +23,7 @@ import org.springframework.test.context.web.WebAppConfiguration;
  */
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = {BookProfApplication.class, WebMvcConfig.class})
+@ContextConfiguration(classes = {MongoDbConfig.class, WebMvcConfig.class})
 @WebAppConfiguration
 public class BookTypeRepositoryTest {
 

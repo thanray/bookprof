@@ -1,38 +1,39 @@
-package org.bookprof;
+package org.bookprof.config;
 
 import com.mongodb.Mongo;
 import com.mongodb.MongoClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 import org.springframework.data.mongodb.config.AbstractMongoConfiguration;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
+@Profile("default")
 @Configuration
-@ComponentScan
-@EnableAutoConfiguration
+@ComponentScan(value = "org.bookprof")
 @EnableMongoRepositories(value = "org.bookprof.repository")
-public class BookProfApplication extends AbstractMongoConfiguration {
+public class MongoDbConfig extends AbstractMongoConfiguration {
 
-  Logger logger = LoggerFactory.getLogger(BookProfApplication.class);
+  Logger logger = LoggerFactory.getLogger(MongoDbConfig.class);
+
   public static void main(String[] args) {
-    SpringApplication.run(BookProfApplication.class, args);
+    SpringApplication.run(MongoDbConfig.class, args);
   }
 
+  @Value("${mongo.url}")
+  private String url;
+
+  @Value("${mongo.db}")
+  private String databaseName;
 
   @Override
   protected String getDatabaseName() {
-    String databaseName = "bookprof-db";
-    String property = System.getProperty("mongo-db");
 
-    if (property != null){
-      databaseName = property;
-    }
-
-    logger.info("Database:  " + databaseName);
+    logger.info("Using database:  " + databaseName);
     return databaseName;
   }
 

@@ -10,12 +10,33 @@ import org.springframework.data.mongodb.core.index.Indexed;
 public class Publisher {
 
   @Id
-  private ObjectId publisherId;
+  private ObjectId id;
 
   @Indexed
   private String name;
 
-  public Publisher(String name) {
+  public Publisher(ObjectId id, String name) {
+    this.id = id;
+    this.name = name;
+  }
+
+  public Publisher(String publisherName) {
+    this.name = publisherName;
+  }
+
+  public ObjectId getId() {
+    return id;
+  }
+
+  public void setId(ObjectId id) {
+    this.id = id;
+  }
+
+  public String getName() {
+    return name;
+  }
+
+  public void setName(String name) {
     this.name = name;
   }
 }

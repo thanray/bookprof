@@ -8,10 +8,10 @@ buildscript {
     mavenCentral()
     maven { url "http://repo.spring.io/snapshot" }
     maven { url "http://repo.spring.io/milestone" }
+    jcenter()
   }
   dependencies {
     //Required dependency for spring-boot plugin
-
 
     classpath 'javax.servlet:javax.servlet-api:3.0.1'
     classpath 'org.springframework.boot:spring-boot-starter-data-jpa:1.1.2.BUILD-SNAPSHOT'
@@ -19,6 +19,11 @@ buildscript {
     classpath 'com.sourcemuse.gradle.plugin:gradle-mongo-plugin:0.5.0'
     classpath group: 'org.zeroturnaround', name: 'gradle-jrebel-plugin', version: '1.1.2'
 
+    // spring loaded
+    /*dependencies {
+      classpath "org.springframework.boot:spring-boot-gradle-plugin:1.2.2.RELEASE"
+      classpath 'org.springframework:springloaded:1.2.0.RELEASE'
+    }*/
   }
 }
 apply plugin: 'rebel'
@@ -49,10 +54,10 @@ repositories {
   maven { url "http://repo.spring.io/snapshot" }
   maven { url "http://repo.spring.io/milestone" }
   maven { url "http://repo1.maven.org/maven2"}
+
 }
 
 dependencies {
-
 
   compile("org.springframework.boot:spring-boot-starter-thymeleaf")
   compile("org.springframework.boot:spring-boot-starter-security")
@@ -63,14 +68,16 @@ dependencies {
   //Required dependency for JSP
   providedRuntime 'org.apache.tomcat.embed:tomcat-embed-jasper'
 
-
   testCompile("junit:junit")
+  testCompile("org.springframework.security:spring-security-test:4.0.0.M1")
+  testCompile("com.github.fakemongo:fongo:1.6.2")
   testCompile("org.springframework.boot:spring-boot-starter-test")
   testCompile "de.flapdoodle.embed:de.flapdoodle.embed.mongo:${embedMongoVersion}"
 
 
 }
 
+/*
 mongo {
   //  logFilePath: The desired log file path (defaults to 'embedded-mongo.log')
   storageLocation = '/tmp/mongodb'
@@ -80,24 +87,25 @@ mongo {
 
   //  storageLocation: The directory location from where embedded Mongo will run, such as /tmp/storage (defaults to a java temp directory)
 }
-
+  */
 test {
-  systemProperties 'mongo-db': 'bookprof-db-test'
+  /*
+  systemProperties 'mongo-db': 'bookprof-db-itest'
 
   def property = System.getProperty("itest")
 
   if(property != null){
     dependsOn.add('startMongoDb')
   }
-
+    */
   println "=================\n Running unit tests \n==================";
 }
 build {
-  def property = System.getProperty("itest")
+  /*def property = System.getProperty("itest")
 
   if(property != null) {
     dependsOn.add("stopMongoDb")
-  }
+  } */
 }
 
 task dists {
@@ -106,3 +114,11 @@ task dists {
 }
 
 defaultTasks 'dists'
+
+/*
+idea {
+  module {
+    inheritOutputDirs = false
+    outputDir = file("$buildDir/classes/main/")
+  }
+}*/

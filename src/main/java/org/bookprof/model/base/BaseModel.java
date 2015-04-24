@@ -10,7 +10,8 @@ import org.bookprof.model.user.User;
 public abstract class BaseModel {
 
   private boolean enabled;
-  private long createdById;
+
+  private User createdById;
   private User updatedById;
 
   private Date createdByDateTime;
@@ -24,11 +25,11 @@ public abstract class BaseModel {
     this.enabled = enabled;
   }
 
-  public long getCreatedById() {
+  public User getCreatedById() {
     return createdById;
   }
 
-  public void setCreatedById(long createdById) {
+  public void setCreatedById(User createdById) {
     this.createdById = createdById;
   }
 

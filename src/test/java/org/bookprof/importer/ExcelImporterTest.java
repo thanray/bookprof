@@ -21,7 +21,5 @@ public class ExcelImporterTest {
 
     assertNotNull(bookTypes);
     assertFalse(bookTypes.isEmpty());
-
-
   }
 }
