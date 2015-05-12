@@ -14,6 +14,9 @@ public class BookTypeCategory extends BaseModel{
 
   private String name;
 
+  public BookTypeCategory() {
+  }
+
   public BookTypeCategory(ObjectId id, String name) {
     this.id = id;
     this.name = name;

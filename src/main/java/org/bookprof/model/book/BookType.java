@@ -31,6 +31,7 @@ public class BookType extends BaseModel {
 
   @DBRef
   private Author author;
+  @DBRef
   private Publisher publisher;
   private int year;
   private int page;

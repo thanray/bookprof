@@ -15,6 +15,9 @@ public class Publisher {
   @Indexed
   private String name;
 
+  public Publisher() {
+  }
+
   public Publisher(ObjectId id, String name) {
     this.id = id;
     this.name = name;

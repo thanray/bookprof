@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.bookprof.model.book.BookType;
 import org.bookprof.repository.BookTypeRepository;
+import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,7 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class BookTypeController {
 
   @Autowired
-  BookTypeRepository bookTypeRepository;
+  private BookTypeRepository bookTypeRepository;
 
   @RequestMapping(method = {RequestMethod.GET})
   public List<BookType> getBookTypes() {
@@ -44,7 +45,8 @@ public class BookTypeController {
   public List<BookType> getBookType(@PathVariable String id) {
     List<BookType> bookTypes = new ArrayList<BookType>();
 
-    Iterable<BookType> all = bookTypeRepository.findAll(Arrays.asList(id));
+    ObjectId objectId =  new ObjectId(id);
+    Iterable<BookType> all = bookTypeRepository.findAll(Arrays.asList(objectId));
 
     return toBookTypeList(bookTypes, all);
   }
