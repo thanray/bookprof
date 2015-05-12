@@ -1,12 +1,14 @@
 package org.bookprof.service;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 import java.util.Collections;
-import java.util.Date;
+import java.util.List;
 
 import org.bookprof.IntegrationTestCase;
 import org.bookprof.builder.BookTypeBuilder;
+import org.bookprof.model.book.Author;
 import org.bookprof.model.book.BookType;
 import org.bookprof.model.book.BookTypeCategory;
 import org.bookprof.model.book.Publisher;
@@ -15,6 +17,7 @@ import org.bookprof.repository.BookTypeRepository;
 import org.bookprof.repository.PublisherRepository;
 import org.bson.types.ObjectId;
 import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,18 +32,32 @@ public class BookTypeServiceImplIntegrationTest extends IntegrationTestCase {
   private BookTypeCategoryRepository bookTypeCategoryRepository;
   @Autowired
   private PublisherRepository publisherRepository;
-
   @Autowired
-  private BookTypeService bookTypeService;
+  private BookTypeService instance;
 
   private BookTypeCategory category;
   private Publisher publisher;
+  private BookType bookType;
+  private Author author;
 
   @After
   public void tearDown() {
     bookTypeRepository.deleteAll();
     bookTypeCategoryRepository.deleteAll();
     publisherRepository.deleteAll();
+
+  }
+
+  @Before
+  public void setUp(){
+    ObjectId categoryObjectId = ObjectId.get();
+    BookTypeCategory category = new BookTypeCategory(categoryObjectId, "category");
+    bookTypeCategoryRepository.save(category);
+
+    publisher = new Publisher(ObjectId.get(), "published");
+    publisherRepository.save(publisher);
+
+    bookType = getBookType();
   }
 
   @Test
@@ -49,27 +66,40 @@ public class BookTypeServiceImplIntegrationTest extends IntegrationTestCase {
   }
   @Test(expected = IllegalArgumentException.class)
   public void testSave()  {
-    bookTypeService.save(null, null);
+    instance.save(null, null);
   }
   @Test
   public void testCreate()  {
 
-    //Given
-    ObjectId categoryObjectId = ObjectId.get();
-    BookTypeCategory category = new BookTypeCategory(categoryObjectId, "category");
-    bookTypeCategoryRepository.save(category);
-
-    Publisher publisher = new Publisher(ObjectId.get(), "published");
-    publisherRepository.save(publisher);
-
-    Date now = new Date();
-    BookType bookType = getBookType();
+    //Given  new BookType
 
     // When
-    bookTypeService.save(user, bookType);
+    instance.save(user, bookType);
 
     // Then
     assertNotNull("userId", user.getId());
+  }
+  @Test
+  public void testGetBookTypeByPublisher()  {
+
+    //Given
+    template.save(user);
+    instance.save(user, bookType);
+
+    // When
+    List<BookType> bookTypes = instance.getBookTypeByPublisher(user, publisher);
+
+    // Then
+    assertNotNull("bookTypes", bookTypes);
+    BookType bookTypeWithPublisher = bookTypes.get(0);
+    assertEquals(bookTypeWithPublisher.getPublisher().getName(), publisher.getName());
+  }
+
+  //TODO
+  @Test
+  public void testGetBookTypeByAuthor()  {
+
+
   }
 
   private BookType getBookType() {
@@ -84,5 +114,4 @@ public class BookTypeServiceImplIntegrationTest extends IntegrationTestCase {
         .setSSN("ssn")
         .build();
   }
-
 }

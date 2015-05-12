@@ -1,15 +1,20 @@
 package org.bookprof.service;
 
 import static org.hibernate.validator.internal.util.Contracts.assertNotNull;
+import static org.springframework.data.mongodb.core.query.Criteria.where;
 
 import java.util.Date;
+import java.util.List;
 
+import com.mongodb.BasicDBObject;
 import org.bookprof.model.book.BookType;
+import org.bookprof.model.book.Publisher;
 import org.bookprof.model.user.User;
 import org.bookprof.repository.BookTypeRepository;
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Service;
 
 /**
@@ -43,6 +48,21 @@ public class BookTypeServiceImpl implements BookTypeService {
     bookType.setUpdatedByDateTime(now);
 
     bookTypeRepository.save(bookType);
+  }
+
+  @Override
+  public List<BookType> getBookTypeByPublisher(User user, Publisher publisher) {
+    assertNotNull(user, "user");
+    assertNotNull(user.getId(), "user.id");
+    assertNotNull(publisher, "publisher");
+    assertNotNull(publisher.getId(), "publisher.id");
+
+    BasicDBObject name = new BasicDBObject("name", publisher.getName());
+
+    Query query = new Query(where("bookType.publisher.id").is(publisher.getId()));
+
+    //return template.find(query, BookType.class);
+    return bookTypeRepository.findByPublisher(publisher);
   }
 
 }
