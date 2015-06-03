@@ -14,7 +14,6 @@ import org.springframework.data.mongodb.repository.support.SimpleMongoRepository
  */
 public class MyRepositoryImpl <T extends BaseModel, ObjectId extends Serializable> extends SimpleMongoRepository<T, ObjectId> implements MyRepository<T,ObjectId> {
 
-
   /**
    * Creates a ew {@link org.springframework.data.mongodb.repository.support.SimpleMongoRepository} for the given {@link org.springframework.data.mongodb.repository.query.MongoEntityInformation} and {@link MongoTemplate}.
    *
@@ -25,17 +24,12 @@ public class MyRepositoryImpl <T extends BaseModel, ObjectId extends Serializabl
     super(metadata, mongoOperations);
   }
 
-  public <S extends T>void save(User updatedById, S s){
-    s.setUpdatedByDateTime(new Date());
-    s.setUpdatedById(updatedById);
-
-  }
-  public <S extends T>void create(User createdBy, S s){
+  public <S extends T>void save(User createdBy, S s){
     s.setUpdatedByDateTime(new Date());
     s.setUpdatedById(createdBy);
     s.setCreatedByDateTime(new Date());
     s.setCreatedById(createdBy);
 
-    save(s);
+    super.save(s);
   }
 }

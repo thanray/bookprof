@@ -1,20 +1,16 @@
 package org.bookprof.service;
 
 import static org.hibernate.validator.internal.util.Contracts.assertNotNull;
-import static org.springframework.data.mongodb.core.query.Criteria.where;
 
 import java.util.Date;
 import java.util.List;
 
-import com.mongodb.BasicDBObject;
 import org.bookprof.model.book.BookType;
 import org.bookprof.model.book.Publisher;
 import org.bookprof.model.user.User;
 import org.bookprof.repository.BookTypeRepository;
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.mongodb.core.MongoTemplate;
-import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Service;
 
 /**
@@ -22,8 +18,7 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class BookTypeServiceImpl implements BookTypeService {
-  @Autowired
-  private MongoTemplate template;
+
   @Autowired
   private BookTypeRepository bookTypeRepository;
 
@@ -44,6 +39,7 @@ public class BookTypeServiceImpl implements BookTypeService {
       bookType.setCreatedById(user);
       bookType.setCreatedByDateTime(now);
     }
+
     bookType.setUpdatedById(user);
     bookType.setUpdatedByDateTime(now);
 
@@ -57,12 +53,6 @@ public class BookTypeServiceImpl implements BookTypeService {
     assertNotNull(publisher, "publisher");
     assertNotNull(publisher.getId(), "publisher.id");
 
-    BasicDBObject name = new BasicDBObject("name", publisher.getName());
-
-    Query query = new Query(where("bookType.publisher.id").is(publisher.getId()));
-
-    //return template.find(query, BookType.class);
     return bookTypeRepository.findByPublisher(publisher);
   }
-
 }

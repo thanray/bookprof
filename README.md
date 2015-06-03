@@ -1,6 +1,9 @@
 # bookprof
 
-# To take database to latest version
-gradle flywayMigrate -i
+# run:
+gradle bootRun
+
+
+gradle test
 
 

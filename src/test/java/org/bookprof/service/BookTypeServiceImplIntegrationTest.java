@@ -8,7 +8,6 @@ import java.util.List;
 
 import org.bookprof.IntegrationTestCase;
 import org.bookprof.builder.BookTypeBuilder;
-import org.bookprof.model.book.Author;
 import org.bookprof.model.book.BookType;
 import org.bookprof.model.book.BookTypeCategory;
 import org.bookprof.model.book.Publisher;
@@ -32,13 +31,13 @@ public class BookTypeServiceImplIntegrationTest extends IntegrationTestCase {
   private BookTypeCategoryRepository bookTypeCategoryRepository;
   @Autowired
   private PublisherRepository publisherRepository;
+
   @Autowired
   private BookTypeService instance;
 
   private BookTypeCategory category;
   private Publisher publisher;
   private BookType bookType;
-  private Author author;
 
   @After
   public void tearDown() {
@@ -51,7 +50,7 @@ public class BookTypeServiceImplIntegrationTest extends IntegrationTestCase {
   @Before
   public void setUp(){
     ObjectId categoryObjectId = ObjectId.get();
-    BookTypeCategory category = new BookTypeCategory(categoryObjectId, "category");
+    category = new BookTypeCategory(categoryObjectId, "category");
     bookTypeCategoryRepository.save(category);
 
     publisher = new Publisher(ObjectId.get(), "published");
@@ -68,10 +67,11 @@ public class BookTypeServiceImplIntegrationTest extends IntegrationTestCase {
   public void testSave()  {
     instance.save(null, null);
   }
+
   @Test
   public void testCreate()  {
 
-    //Given  new BookType
+    //Given
 
     // When
     instance.save(user, bookType);
@@ -83,7 +83,7 @@ public class BookTypeServiceImplIntegrationTest extends IntegrationTestCase {
   public void testGetBookTypeByPublisher()  {
 
     //Given
-    template.save(user);
+
     instance.save(user, bookType);
 
     // When
@@ -95,7 +95,6 @@ public class BookTypeServiceImplIntegrationTest extends IntegrationTestCase {
     assertEquals(bookTypeWithPublisher.getPublisher().getName(), publisher.getName());
   }
 
-  //TODO
   @Test
   public void testGetBookTypeByAuthor()  {
 

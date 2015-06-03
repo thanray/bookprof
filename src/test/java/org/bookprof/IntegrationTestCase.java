@@ -4,6 +4,7 @@ import java.util.Date;
 
 import org.bookprof.config.DefaultConfig;
 import org.bookprof.model.user.User;
+import org.bson.types.ObjectId;
 import org.junit.Before;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.SpringApplicationContextLoader;
@@ -28,8 +29,9 @@ public class IntegrationTestCase {
   protected User user = new User();
 
   @Before
-  public void setUp(){
+  public void initialize(){
 
+    user.setId(ObjectId.get());
     template.save(user);
   }
 }
