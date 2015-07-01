@@ -24,7 +24,7 @@ public class ExcelImporter {
     Map<Integer, String> bookTypeCategories = new HashMap();
 
     bookTypeCategories.put(1, "RELIGION");
-    /*bookTypeCategories.put(2, "ILAKKANAM");
+    bookTypeCategories.put(2, "ILAKKANAM"); /*
     bookTypeCategories.put(3, "Resech");
     bookTypeCategories.put(4, "MUSIC");
     bookTypeCategories.put(5, "DANCE");
@@ -42,8 +42,6 @@ public class ExcelImporter {
   }
 
   public List<BookType> importFile(String filePath) throws IOException {
-
-
     List bookTypes = new ArrayList<BookType>();
 
     Set<Map.Entry<Integer, String>> set = initCategories().entrySet();
@@ -52,13 +50,10 @@ public class ExcelImporter {
       Integer sheetNr = entry.getKey();
       String categoryName = entry.getValue();
 
-
       String fileName = String.format(filePath, sheetNr);
-
 
       bookTypes.addAll(importSheet(sheetNr, categoryName, fileName));
     }
-
     return bookTypes;
   }
 
@@ -87,7 +82,6 @@ public class ExcelImporter {
   }
 
   private BookType parseLine(String s) {
-    BookType bookType = new BookType();
     String line = s;
 
     String[] col = line.split("\"");

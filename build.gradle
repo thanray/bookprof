@@ -66,6 +66,8 @@ dependencies {
   compile("org.springframework.boot:spring-boot-starter-data-mongodb")
 
   compile("com.opencsv:opencsv:3.3")
+  compile("org.mongeez:mongeez:0.9.3")
+
   //Required dependency for JSP
   providedRuntime 'org.apache.tomcat.embed:tomcat-embed-jasper'
 
