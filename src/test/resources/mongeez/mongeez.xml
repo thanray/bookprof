@@ -1,3 +1,4 @@
 <changeFiles>
+    <file path="drop-test.js"/>
     <file path="initialize-test.js"/>
 </changeFiles>
