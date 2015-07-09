@@ -78,6 +78,7 @@ dependencies {
   testCompile("com.github.fakemongo:fongo:1.6.2")
   testCompile("org.springframework.boot:spring-boot-starter-test")
   testCompile "de.flapdoodle.embed:de.flapdoodle.embed.mongo:${embedMongoVersion}"
+  testCompile("com.jayway.jsonpath:json-path:2.0.0")
 
 
 }
@@ -94,23 +95,11 @@ mongo {
 }
   */
 test {
-  /*
-  systemProperties 'mongo-db': 'bookprof-db-itest'
 
-  def property = System.getProperty("itest")
-
-  if(property != null){
-    dependsOn.add('startMongoDb')
-  }
-    */
   println "=================\n Running unit tests \n==================";
 }
 build {
-  /*def property = System.getProperty("itest")
 
-  if(property != null) {
-    dependsOn.add("stopMongoDb")
-  } */
 }
 
 task dists {

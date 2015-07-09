@@ -17,9 +17,9 @@ public class BookTypeBuilder extends BaseModelBuilder <BookType> implements Buil
     bookType = new BookType();
   }
 
-  public BookTypeBuilder(String bookTypeId) {
+  public BookTypeBuilder(ObjectId bookTypeId) {
     bookType = new BookType();
-    bookType.setId(new ObjectId(bookTypeId));
+    bookType.setId(bookTypeId);
   }
 
   public BookTypeBuilder setName(String name){

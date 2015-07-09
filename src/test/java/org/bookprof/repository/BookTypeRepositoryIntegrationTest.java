@@ -85,6 +85,7 @@ public class BookTypeRepositoryIntegrationTest extends IntegrationTestCase {
     BookType one = bookTypeRepository.findOne(objectId);
     assertNotNull("should be stored", one);
   }
+
   private BookType getBookType() {
     return (BookType) new BookTypeBuilder()
         .setName("bookName")
@@ -97,6 +98,5 @@ public class BookTypeRepositoryIntegrationTest extends IntegrationTestCase {
         .setSSN("ssn")
         .build();
   }
-
 
 }

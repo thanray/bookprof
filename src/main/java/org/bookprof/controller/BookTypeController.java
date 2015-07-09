@@ -1,7 +1,6 @@
 package org.bookprof.controller;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import org.bookprof.model.book.BookType;
@@ -42,13 +41,12 @@ public class BookTypeController {
 
 
   @RequestMapping(value = "/{id}", method = {RequestMethod.GET})
-  public List<BookType> getBookType(@PathVariable String id) {
-    List<BookType> bookTypes = new ArrayList<BookType>();
+  public BookType getBookType(@PathVariable String id) {
 
     ObjectId objectId =  new ObjectId(id);
-    Iterable<BookType> all = bookTypeRepository.findAll(Arrays.asList(objectId));
+    BookType bookType = bookTypeRepository.findOne(objectId);
 
-    return toBookTypeList(bookTypes, all);
+    return bookType;
   }
 
   @RequestMapping(method = {RequestMethod.PUT})
