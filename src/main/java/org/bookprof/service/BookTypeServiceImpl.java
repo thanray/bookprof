@@ -5,6 +5,7 @@ import static org.hibernate.validator.internal.util.Contracts.assertNotNull;
 import java.util.Date;
 import java.util.List;
 
+import org.bookprof.model.book.Author;
 import org.bookprof.model.book.BookType;
 import org.bookprof.model.book.Publisher;
 import org.bookprof.model.user.User;
@@ -24,7 +25,8 @@ public class BookTypeServiceImpl implements BookTypeService {
 
   @Override
   public BookType getBookType(ObjectId id) {
-    throw new UnsupportedOperationException();
+    assertNotNull(id, "id");
+    return bookTypeRepository.findOne(id);
   }
 
   @Override
@@ -44,6 +46,16 @@ public class BookTypeServiceImpl implements BookTypeService {
     bookType.setUpdatedByDateTime(now);
 
     bookTypeRepository.save(bookType);
+  }
+
+  @Override
+  public List<BookType> getBookTypeByAuthor(User user, Author author) {
+    assertNotNull(user, "user");
+    assertNotNull(user.getId(), "user.id");
+    assertNotNull(author, "author");
+    assertNotNull(author.getId(), "author.id");
+
+    return bookTypeRepository.findByAuthor(author);
   }
 
   @Override

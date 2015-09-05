@@ -80,7 +80,6 @@ dependencies {
   testCompile "de.flapdoodle.embed:de.flapdoodle.embed.mongo:${embedMongoVersion}"
   testCompile("com.jayway.jsonpath:json-path:2.0.0")
 
-
 }
 
 /*
@@ -96,7 +95,7 @@ mongo {
   */
 test {
 
-  println "=================\n Running unit tests \n==================";
+  println "=================\n Running tests \n==================";
 }
 build {
 

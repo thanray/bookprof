@@ -28,11 +28,11 @@ public class BookType extends BaseModel {
 
   @DBRef
   private List<BookTypeCategory> bookTypeCategory;
-
   @DBRef
   private Author author;
   @DBRef
   private Publisher publisher;
+
   private int year;
   private int page;
   private int nr;

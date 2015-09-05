@@ -14,6 +14,7 @@ import com.opencsv.CSVReader;
 import org.bookprof.model.book.Author;
 import org.bookprof.model.book.BookType;
 import org.bookprof.model.book.Publisher;
+import org.bson.types.ObjectId;
 
 /**
  * Created by kr on 21/03/15.
@@ -128,6 +129,7 @@ enum BookTypeColumn {
 
         String colValue = col[field.ordinal()];
         if (colValue != null) {
+          colValue = colValue.trim();
           setValue(bookType, colValue, field);
         }
       }
@@ -146,7 +148,7 @@ enum BookTypeColumn {
         bookType.setName(colValue);
         break;
       case AUTHOR:
-        bookType.setAuthor(new Author(colValue));
+        bookType.setAuthor(new Author(ObjectId.get(), colValue));
         break;
       case PUBLISHER:
         bookType.setPublisher(new Publisher(colValue));

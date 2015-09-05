@@ -8,9 +8,11 @@ import java.util.List;
 
 import org.bookprof.IntegrationTestCase;
 import org.bookprof.builder.BookTypeBuilder;
+import org.bookprof.model.book.Author;
 import org.bookprof.model.book.BookType;
 import org.bookprof.model.book.BookTypeCategory;
 import org.bookprof.model.book.Publisher;
+import org.bookprof.repository.AuthorRepository;
 import org.bookprof.repository.BookTypeCategoryRepository;
 import org.bookprof.repository.BookTypeRepository;
 import org.bookprof.repository.PublisherRepository;
@@ -31,6 +33,8 @@ public class BookTypeServiceImplIntegrationTest extends IntegrationTestCase {
   private BookTypeCategoryRepository bookTypeCategoryRepository;
   @Autowired
   private PublisherRepository publisherRepository;
+  @Autowired
+  private AuthorRepository authorRepository;
 
   @Autowired
   private BookTypeService instance;
@@ -38,6 +42,7 @@ public class BookTypeServiceImplIntegrationTest extends IntegrationTestCase {
   private BookTypeCategory category;
   private Publisher publisher;
   private BookType bookType;
+  private Author author;
 
   @After
   public void tearDown() {
@@ -48,7 +53,7 @@ public class BookTypeServiceImplIntegrationTest extends IntegrationTestCase {
   }
 
   @Before
-  public void setUp(){
+  public void setUp() {
     ObjectId categoryObjectId = ObjectId.get();
     category = new BookTypeCategory(categoryObjectId, "category");
     bookTypeCategoryRepository.save(category);
@@ -56,22 +61,36 @@ public class BookTypeServiceImplIntegrationTest extends IntegrationTestCase {
     publisher = new Publisher(ObjectId.get(), "published");
     publisherRepository.save(publisher);
 
+    author = new Author(ObjectId.get(), "author");
+    authorRepository.save(author);
+
     bookType = getBookType();
+
   }
 
   @Test
-  public void testGetBookType()  {
+  public void testGetBookTypeById() {
 
+    // Given
+    instance.save(user, bookType);
+
+    // When
+    BookType bookTypeFound = instance.getBookType(this.bookType.getId());
+
+    // Then
+    assertNotNull(bookTypeFound);
+    assertEquals(bookType.getId(), bookTypeFound.getId());
   }
+
   @Test(expected = IllegalArgumentException.class)
-  public void testSave()  {
+  public void testSave() {
     instance.save(null, null);
   }
 
   @Test
-  public void testCreate()  {
+  public void testCreate() {
 
-    //Given
+    // Given
 
     // When
     instance.save(user, bookType);
@@ -79,11 +98,11 @@ public class BookTypeServiceImplIntegrationTest extends IntegrationTestCase {
     // Then
     assertNotNull("userId", user.getId());
   }
+
   @Test
-  public void testGetBookTypeByPublisher()  {
+  public void testGetBookTypeByPublisher() {
 
-    //Given
-
+    // Given
     instance.save(user, bookType);
 
     // When
@@ -96,9 +115,18 @@ public class BookTypeServiceImplIntegrationTest extends IntegrationTestCase {
   }
 
   @Test
-  public void testGetBookTypeByAuthor()  {
+  public void testGetBookTypeByAuthor() {
+    // Given
+    instance.save(user, bookType);
 
+    // When
+    List<BookType> books = instance.getBookTypeByAuthor(user, author);
 
+    assertEquals(1, books.size());
+    BookType bookTypeFound = books.get(0);
+    assertEquals(bookTypeFound.getId(), bookTypeFound.getId());
+    assertEquals(author.getId(), bookTypeFound.getAuthor().getId());
+    assertEquals("author", bookTypeFound.getAuthor().getName());
   }
 
   private BookType getBookType() {
@@ -108,6 +136,7 @@ public class BookTypeServiceImplIntegrationTest extends IntegrationTestCase {
         .setPage(100)
         .setYear(2015)
         .setPublisher(publisher)
+        .setAuthor(author)
         .setBookTypeCategory(Collections.singletonList(category))
         .setReleasedDate(now)
         .setSSN("ssn")

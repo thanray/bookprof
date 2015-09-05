@@ -1,5 +1,6 @@
 package org.bookprof.model.book;
 
+import org.bookprof.model.base.BaseModel;
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
@@ -7,7 +8,7 @@ import org.springframework.data.mongodb.core.index.Indexed;
 /**
  * Created by kr on 22/03/15.
  */
-public class Publisher {
+public class Publisher extends BaseModel {
 
   @Id
   private ObjectId id;
